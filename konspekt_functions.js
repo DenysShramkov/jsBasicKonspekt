@@ -34,3 +34,7 @@ logger();
 // the main difference between function declaration and function expression is that function expression is created when the execution reaches it. So we can't call it before it's declared.
 
 const calc = (a, b) => {return a + b}; // arrow function
+
+// all the functions has returned value. If there is no return statement, it'll return undefined
+function doNothing() {}
+console.log(doNothing() === undefined); // true
