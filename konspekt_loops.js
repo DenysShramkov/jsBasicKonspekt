@@ -41,3 +41,15 @@ first: for (let i = 1; i < 8; i++) {
 		}		
 	}
 }
+
+
+for (let i = 0; i <= lines; i++) {
+    for (let j = 0; j <= lines + i; j++) {
+        if (j < lines - i) {
+            result += ' ';
+        } else if (j >= lines - i) {
+            result += '*';
+        }
+    }
+    result += "\n";
+}
