@@ -45,3 +45,6 @@ console.log(parseFloat(num)); // parses the number and returns a floating-point 
 const string = "12.2px";
 console.log(parseInt(string)); // parses the string and returns an integer, in this case 12. Not only does parseInt() ignore any non-numeric characters that come after the number, but it also ignores any leading whitespace. So if the string had been "   12.2px", parseInt() would still return 12.
 console.log(parseFloat(string)); // parses the string and returns a floating-point number, in this case 12.2. Similar to parseInt(), parseFloat() also ignores any non-numeric characters that come after the number, as well as any leading whitespace. So if the string had been "   12.2px", parseFloat() would still return 12.2.
+
+const testString = "  12:00  ";
+console.log(testString.trim()); // removes whitespace from both ends of the string, in this case "12:00". Note that trim() does not modify the original string, it returns a new string with the whitespace removed. So if we check testString after calling trim(), it will still have the whitespace: console.log(testString); // "  12:00  "
