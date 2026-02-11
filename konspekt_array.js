@@ -34,6 +34,8 @@ arr.forEach(function(item, index, array) {
 
 const str = "Hello, world, how, are, you";
 const strArr = str.split(", "); // splits the string into an array of substrings using the specified separator, in this case ", "
+const reversedArray = strArr.reverse(); // reverses the order of the elements in the array
+const joinedString = reversedArray.join(", "); // joins the elements of the array into a string using the specified separator, in this case ", "
 
 const newArr = [2, 13, 26, 8, 10];
 newArr.sort(); // sorts the array in place and returns the sorted array, but it sorts the elements as strings by default, so it will sort them in lexicographical order, which is not what we want in this case
@@ -43,3 +45,33 @@ newArr.sort(function(a, b) { // sorts the array using a compare function that co
 	return a - b; // if a is less than b, it will return a negative number, if a is greater than b, it will return a positive number, if a is equal to b, it will return 0
 });
 console.log(newArr); // shows [2, 8, 10, 13, 26]
+
+// homework 
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+// Method 2: Simple alphabetical sort
+const studentsSorted = [...students].sort();
+
+function sortStudentsByGroups(arr) {
+    let newArray = [];
+    let extrsStudents = arr.length % 3;
+    let leftStudents = '';
+    arr.forEach((item, index) => {
+        if (index < arr.length - extrsStudents) {
+            if (index === 0 || index % 3 === 0) {
+                newArray.push([item]);
+            } else if (index % 3 === 0) {
+                newArray.push([item]);
+            } else {
+                newArray[newArray.length - 1].push(item)
+            }
+        } else {
+            leftStudents += ' ' + item;
+        }
+    })
+	leftStudents ? newArray.push("Оставшиеся студенты:" + leftStudents) : newArray.push("Оставшиеся студенты: -");
+    return newArray
+}
+
+console.log(sortStudentsByGroups(studentsSorted)) // shows [["Andrew", "Bernard", "Cris"], ["Ann", "Josh", "Mark"], ["Peter", "Sam", "Sandra"], "Оставшиеся студенты: Takesi"]

@@ -73,13 +73,6 @@ class GoogleSheetsReader {
 // Usage:
 const sheetsReader = new GoogleSheetsReader('https://script.google.com/macros/s/AKfycbxIB1xzBHwY6zP65AXOPBbM4h5H82SsROc4UNMbGHsFTpb3YG6DmQlxBH1IJ32ukHUKiQ/exec');
 
-// Get all data
-const data = await sheetsReader.getAllData();
-console.log('Data from sheet:', data);
-console.log(data.length);
-
-
-
 // Write single cell
 appsScript.postToSheet('A2', 'Hello from fetch!');
 
