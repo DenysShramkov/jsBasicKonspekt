@@ -1,1 +1,1 @@
-# jsBasicKonspekt
+document.querySelectorAll(".new-header__bottom-menu-container button").forEach(function(item) {

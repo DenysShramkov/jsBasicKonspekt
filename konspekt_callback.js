@@ -57,3 +57,4 @@ doMath(function() { // anonymous function
 
 // Or using an arrow function (more concise)
 doMath(() => sum(8, 2)); 
+
