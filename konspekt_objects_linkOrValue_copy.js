@@ -99,3 +99,45 @@ const q = {
 
 const newObj = {...q}; // creates a new object and copies the properties of the q object to it
 newObj.one = 10;
+
+
+
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
+
+    // copy.waitors = [{name: 'Mike', age: 32}];
+    copy.waitors[0] = {name: 'Mike', age: 32};
+    return copy;
+}
+
+transferWaitors(restorantData);
+
+// line 134 will change the waitors property of the original restorantData object, because the waitors property is a reference to the same array in memory. To avoid this, we can create a deep copy of the restorantData object, which will create a new array for the waitors property as well.
+
+// but line 135 will not change the waitors property of the original restorantData object, because we are creating a new object for the first element of the waitors array, and assigning it to the first element of the copy.waitors array. This way, we are not changing the original waitors array, but creating a new one for the copy object.

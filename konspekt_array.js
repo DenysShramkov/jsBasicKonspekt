@@ -75,3 +75,56 @@ function sortStudentsByGroups(arr) {
 }
 
 console.log(sortStudentsByGroups(studentsSorted)) // shows [["Andrew", "Bernard", "Cris"], ["Ann", "Josh", "Mark"], ["Peter", "Sam", "Sandra"], "Оставшиеся студенты: Takesi"]
+
+
+// A pseudo-array (or array-like object) is an object that looks like an array but isn't actually an array. It has a length property and numeric indices, but lacks array methods like forEach, map, filter, etc.
+
+// 1) Create an object with numeric keys and length property
+const pseudoArray = {
+    0: 'first',
+    1: 'second',
+    2: 'third',
+    length: 3
+};
+
+console.log(pseudoArray[0]); // 'first'
+console.log(pseudoArray.length); // 3
+
+// 2) Convert pseudo-array to real array
+
+const realArray = Array.from(pseudoArray); // ['first', 'second', 'third']
+const realArray2 = [...pseudoArray]; // Error! Spread operator doesn't work on pseudo-arrays without Symbol.iterator
+
+// to convert using spread operator
+
+//Spread operator works:
+
+// NodeList (has Symbol.iterator in modern browsers)
+const buttons = document.querySelectorAll('button');
+const buttonArray = [...buttons]; // ✅ Works
+
+//Spread operator DOESN'T work:
+
+// HTMLCollection (no Symbol.iterator)
+const buttons = document.getElementsByTagName('button');
+const buttonArray = [...buttons]; // ❌ Error
+
+// arguments object (no Symbol.iterator)
+function myFunc() {
+    const args = [...arguments]; // ❌ Error
+}
+
+// Plain pseudo-array object
+const pseudoArray = { 0: 'a', 1: 'b', length: 2 };
+const arr = [...pseudoArray]; // ❌ Error
+
+//Use Array.from() instead - works for ALL pseudo-arrays:
+const arr1 = Array.from(document.querySelectorAll('button'));
+const arr2 = Array.from(document.getElementsByTagName('button'));
+const arr3 = Array.from(arguments);
+const arr4 = Array.from({ 0: 'a', 1: 'b', length: 2 });
+
+// 3) Use array methods on pseudo-array
+Array.prototype.forEach.call(pseudoArray, (item) => {
+    console.log(item);
+});

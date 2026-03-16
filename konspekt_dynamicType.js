@@ -8,6 +8,7 @@ console.log(typeof(String(null))); // shows "string", because the String() funct
 console.log(typeof(5 + "")); // shows "string", because the + operator converts the number 5 to a string when it is added to an empty string
 
 const num = 5;
+console.log(typeof num); // shows "number", because num is assigned the number 5
 console.log('https://doment.com/catalog/' + num); // shows "https://doment.com/catalog/5", because the + operator converts the number 5 to a string when it is added to the string "https://doment.com/catalog/"
 
 const fontSize = 26 + 'px';
@@ -44,3 +45,11 @@ if (switcher) {
 console.log(typeof(Boolean("5"))); // shows "boolean", because the Boolean() function converts the string "5" to a boolean value, which is true
 
 console.log(typeof(!!"5")); // shows "boolean", because the !! operator converts the string "5" to a boolean value, which is true. The first ! operator converts the string "5" to false, and the second ! operator converts it back to true.
+
+console.log(typeof(NaN)); // shows "number", because NaN is a special value that represents "Not-a-Number", but it is still of type number
+
+console.log(typeof([] + false)); // shows "string", because the + operator converts the empty array [] to an empty string "", and then concatenates it with the string "false", resulting in the string "false")
+
+console.log([] + false - null); // shows NaN, because the + operator converts the empty array [] to an empty string "", and then concatenates it with the string "false", resulting in the string "false". Then, when we try to subtract null from the string "false", it results in NaN, because you cannot perform arithmetic operations on a string and null.
+
+console.log([] + 1 + 2); // shows "12", because the + operator converts the empty array [] to an empty string "", and then concatenates it with the string "1" and than "2"

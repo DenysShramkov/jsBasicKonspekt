@@ -38,3 +38,47 @@ const calc = (a, b) => {return a + b}; // arrow function
 // all the functions has returned value. If there is no return statement, it'll return undefined
 function doNothing() {}
 console.log(doNothing() === undefined); // true
+
+
+// SELF-CALLING FUNCTION (IIFE - Immediately Invoked Function Expression)
+
+// 1) Basic self-calling function
+(function() {
+	console.log("This function calls itself immediately!");
+})();
+
+// 2) Self-calling function with parameters
+(function(name, age) {
+	console.log("Hello, " + name + "! You are " + age + " years old.");
+})("Denis", 25);
+
+// 3) Self-calling function with return value
+const result = (function() {
+	const x = 10;
+	const y = 20;
+	return x + y;
+})();
+console.log("Result: " + result); // shows "Result: 30"
+
+// 4) Arrow function self-calling (modern syntax)
+(() => {
+	console.log("Arrow function self-calling!");
+})();
+
+// 5) Self-calling function with local scope (prevents variable pollution)
+(function() {
+	const localVar = "I'm in local scope";
+	console.log(localVar);
+})();
+// console.log(localVar); // This would throw an error because localVar is not defined in global scope
+
+function createCounter() {
+	let count = 0; // this variable is "captured" by the closure
+	
+	return function() {
+		count++;
+		return count;
+	};
+}
+console.log(createCounter()); // result [Function (anonymous)] - means that it returns anonymous functions but not it's result. 
+const counter = createCounter(); // need to call createCounter to get the inner function that has access to count. If call directly createCounter(), it will return the inner function, but we won't have access to it. 

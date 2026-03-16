@@ -1,0 +1,33 @@
+/* CSS Animations - Moving items left and right */
+
+/* Animation: Move from left to right 20px */
+@keyframes moveLeftToRight {
+	from {
+		transform: translateX(0px);
+	}
+	to {
+		transform: translateX(20px);
+	}
+}
+
+/* Animation: Move from right to left 20px */
+@keyframes moveRightToLeft {
+	from {
+		transform: translateX(0px);
+	}
+	to {
+		transform: translateX(-20px);
+	}
+}
+
+/* First item - moves left to right */
+.item:first-child {
+	animation: moveLeftToRight 2s ease-in-out infinite;
+	animation-direction: alternate; /* moves back and forth */
+}
+
+/* Second item - moves right to left */
+.item:nth-child(2) {
+	animation: moveRightToLeft 2s ease-in-out infinite;
+	animation-direction: alternate; /* moves back and forth */
+}
