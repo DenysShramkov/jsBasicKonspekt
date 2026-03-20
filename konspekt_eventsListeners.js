@@ -61,3 +61,28 @@ link.addEventListener('click', (event) => {
 	event.preventDefault(); // prevents the default action of the link, which is to navigate to the href
 	console.log("Link Clicked");
 });
+
+// touchstart, touchmove, touchend - these events are used for handling touch interactions on mobile devices. They are similar to mouse events, but they provide additional information about the touch, such as the number of touches and their coordinates.
+
+// touchcenter - this event is triggered when the user touches the screen with two fingers and then moves them apart or together. It can be used to implement pinch-to-zoom functionality on mobile devices. The event object for touchcenter includes properties such as scale (the distance between the two touches) and rotation (the angle between the two touches).
+
+// touchleave - this event is triggered when a touch point leaves the boundary of an element. It can be used to detect when a user has lifted their finger off the screen or moved it outside of a specific area. The event object for touchleave includes properties such as touches (the list of all current touch points) and changedTouches (the list of touch points that have changed since the last event).
+
+// touchcancel - this event is triggered when a touch point is interrupted, such as when the user receives a phone call or switches to another app. It can be used to handle situations where the touch interaction is unexpectedly interrupted. The event object for touchcancel includes properties such as touches (the list of all current touch points) and changedTouches (the list of touch points that have changed since the last event).
+
+// touches - this property of the event object contains a list of all current touch points on the screen. Each touch point is represented as an object with properties such as identifier (a unique ID for the touch), clientX and clientY (the coordinates of the touch relative to the viewport), and target (the element that the touch is currently over).
+
+// targetTouches - this property of the event object contains a list of touch points that are currently over the target element. It is similar to touches, but it only includes touch points that are interacting with the specific element that the event is attached to.
+
+// changedTouches - this property of the event object contains a list of touch points that have changed since the last event. It is useful for tracking touch interactions, such as when a user lifts their finger off the screen or moves it to a different location. Each touch point in changedTouches has properties such as identifier, clientX, clientY, and target, similar to the touches property.
+
+const wrapper = document.querySelector('.wrapper');
+
+wrapper.addEventListener('click', (event) => {
+	if (event.target && event.target.tagName === 'BUTTON') { // checks if the clicked element is a button and if the event exists (event.target is not null)
+		console.log("Button Clicked");
+	}
+	if (event.target && event.target.classList.contains('red')) {	
+		console.log("Red Button Clicked");
+	}
+});

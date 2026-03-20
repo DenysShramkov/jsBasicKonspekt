@@ -53,3 +53,11 @@ for (let i = 0; i <= lines; i++) {
     }
     result += "\n";
 }
+
+// for of loop - iterates over iterable objects (like arrays, strings, etc.)
+// for in loop - iterates over the enumerable properties of an object (like keys in an object)
+// for of loop with Object.keys() - iterates over the keys of an object, but it will give an error if the object has nested objects, because it can't iterate objects.
+// for of loop with Object.entries() - iterates over the key-value pairs of an object, but it will also give an error if the object has nested objects, because it can't iterate objects.	
+// for of loop with Object.values() - iterates over the values of an object, but it will also give an error if the object has nested objects, because it can't iterate objects.
+
+// when to use for of loop or for in loop - use for of loop when you want to iterate over iterable objects (like arrays, strings, etc.), and use for in loop when you want to iterate over the enumerable properties of an object (like keys in an object). If you want to iterate over the keys or values of an object, it's better to use Object.keys() or Object.values() methods with a for of loop, but be aware that it will give an error if the object has nested objects, because it can't iterate objects.

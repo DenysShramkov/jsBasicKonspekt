@@ -52,3 +52,10 @@ const innerDiv = wrapper.querySelector('div');
 innerDiv.insertAdjacentElement('afterend', div); // inserts the div element after the innerDiv element, which is the first div element that is a child of the wrapper element. This method allows us to insert an existing DOM element at a specific position relative to another element, without having to create a new element or use innerHTML.
 
 innerDiv.insertAdjacentText('beforebegin', 'Before the inner div'); // inserts the specified text at the specified position relative to the innerDiv element. In this case, it inserts "Before the inner div" before the innerDiv element. This method allows us to insert text at a specific position relative to an existing DOM element, without having to create a new text node or use innerHTML.
+
+const btns = document.querySelectorAll('button');
+
+btns[0].classList.add('red'); // adds the class "red" to the first button element
+btns[0].classList.remove('red'); // removes the class "red" from the first button element
+btns[0].classList.toggle('red'); // toggles the class "red" on the first button element (adds it if it's not present, removes it if it is present)
+btns[0].classList.contains('red'); // checks if the first button element has the class "red" and returns true or false

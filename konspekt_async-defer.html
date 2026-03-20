@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<linl rel="stylesheet" href="">
+		<!-- <script defer src="konspekt_DOM-getelem.js"></script> -->
+		<!-- without defer it won't work. The script will be executed after the HTML is parsed. But browser will start loading js while building full DOM -->
+		<!-- <script defer src="konspekt_DOM-getelem-test.js"></script> -->
+		<!-- defer will keep JS execution order -->
+		<!-- google might not like defer -->
+		<script async src="konspekt_DOM-getelem.js"></script>
+		<script async src="konspekt_DOM-getelem-test.js"></script>
+		<!-- async won't wait for other scripts and other scripts won't wait for async, it'll be executed as soon as it's loaded. It doesnt keep an order. Sometimes we will need to script like metrics, google analitics and so on, other screepts don't depend on them so no need to wait -->
+	</head>
+	<body>
+
+		<h1>Hello World</h1>
+		<p>This is a paragraph.</p>
+
+	</body>
+</html>
