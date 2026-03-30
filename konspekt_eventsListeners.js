@@ -12,6 +12,11 @@ btn.addEventListener('click', () => {
 	console.log("Second Click");
 });
 
+btnTarget.addEventListener('click', () => {
+	const target = event.target; // the element that triggered the event. Usually is used when we need to use it often in the function, so we can store it in a variable to avoid calling event.target multiple times, which can be less efficient.
+	console.log("Second Click");
+});
+
 // we can also remove the event listener using removeEventListener method, but we need to have a reference to the function that we want to remove
 
 // When using addEventListener with a named function, the event object is automatically passed as the first parameter
@@ -85,4 +90,24 @@ wrapper.addEventListener('click', (event) => {
 	if (event.target && event.target.classList.contains('red')) {	
 		console.log("Red Button Clicked");
 	}
+});
+
+checkIfElementExist('.splashPageJR__form', (el) => {
+	el.addEventListener('mouseup', (e) => {
+	if (e.target.type == 'radio') {
+		el.querySelector('.form_button_submit').click();    
+	};
+	});
+	el.addEventListener('keydown', (event) => {
+		if (event.target.type == 'radio') {
+			if (event.keyCode === 13 || event.keyCode === 32 || event.key === 'Enter' || event.key === ' ') {
+				el.querySelector('.form_button_submit').click(); 
+			}
+		};
+	});
+	el.addEventListener('touchend', (event) => {
+		if (event.target.type == 'radio') {
+		el.querySelector('.form_button_submit').click();    
+		};
+	});
 });

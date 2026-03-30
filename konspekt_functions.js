@@ -82,3 +82,12 @@ function createCounter() {
 }
 console.log(createCounter()); // result [Function (anonymous)] - means that it returns anonymous functions but not it's result. 
 const counter = createCounter(); // need to call createCounter to get the inner function that has access to count. If call directly createCounter(), it will return the inner function, but we won't have access to it. 
+
+// default parameters
+
+function someFunc(arg = 0) { // default parameter value is 0
+	console.log(arg);
+}
+
+someFunc(); // shows 0, because we didn't pass any argument, so it uses the default value
+someFunc(5); // shows 5, because we passed 5 as an argument, so it overrides the default value

@@ -54,3 +54,17 @@ console.log["colors"]["border"]; // show the value of the object inside object, 
 const {border, bg} = options.colors; // destructuring assignment, it allows us to extract properties from an object and assign them to variables with the same name as the properties. In this case, it will create two variables border and bg, and assign them the values of options.colors.border and options.colors.bg respectively.
 console.log(border); // shows the value of the border property, in this case "black"
 console.log(bg); // shows the value of the bg property, in this case "red"
+
+function findOdd(A) {
+  let objectOfAppears = {}
+  for (let i = 0; i < A.length; i++) {
+      Object.hasOwn(objectOfAppears, A[i]) ? objectOfAppears[A[i]] += 1 : objectOfAppears[A[i]] = 1;
+  }
+  for (let key in objectOfAppears) {
+	if (objectOfAppears[key] % 2 !== 0) {
+		return key;
+	}
+  }
+}
+
+findOdd([20, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5]);

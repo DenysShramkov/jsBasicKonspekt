@@ -56,6 +56,8 @@ innerDiv.insertAdjacentText('beforebegin', 'Before the inner div'); // inserts t
 const btns = document.querySelectorAll('button');
 
 btns[0].classList.add('red'); // adds the class "red" to the first button element
+btns[0].classList.add('red', 'blue', 'green'); // adds multiple classes "red", "blue" and "green" to the first button element
 btns[0].classList.remove('red'); // removes the class "red" from the first button element
+btns[0].classList.remove('red', 'blue'); // removes multiple classes "red" and "blue" from the first button element
 btns[0].classList.toggle('red'); // toggles the class "red" on the first button element (adds it if it's not present, removes it if it is present)
 btns[0].classList.contains('red'); // checks if the first button element has the class "red" and returns true or false
